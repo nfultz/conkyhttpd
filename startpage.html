@@ -1,0 +1,22 @@
+<html>
+
+
+<script>
+function f() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            document.body.innerHTML =(xhr.responseText);
+        }
+    }
+    xhr.open('GET', 'http://localhost:5001/', true);
+    xhr.send(null);
+}
+window.setInterval(f, 3000);
+</script>
+
+
+
+
+
+</html>

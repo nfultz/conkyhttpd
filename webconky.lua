@@ -1,19 +1,23 @@
 do
 
-    print("Loading webconky...")
-    local myopen = package.loadlib("./webconky.so", "luaopen_webconky")
-    myopen()
-    webconky.setup()
+    print("Loading conkyhttpd module...")
+    require("conkyhttpd")
+
+    function conky_setup(port)
+        conkyhttpd.setup(port)
+        return ""
+    end
+
+    function conky_cleanup()
+        conkyhttpd.cleanup()
+        return ""
+    end
 
     function conky_listen()
-        webconky.listen()
+        local i =  conky_info["update_interval"]
+        conkyhttpd.listen(i)
         return ""
     end
 
-
-    function conky_close()
-        webconky.close()
-        return ""
-    end
 
 end

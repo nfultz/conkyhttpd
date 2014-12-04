@@ -8,10 +8,31 @@ update_interval 1.0
 update_interval_on_battery 6.0
 
 lua_load webconky.lua
+lua_startup_hook setup 5001
+lua_shutdown_hook cleanup
 
 ##############################################
 #  Output
 ##############################################
 TEXT
+<html>
+Hello world! $uptime  :)
+
+<table>
+<tr>
+<td>CPU</td>
+<td>$cpu</td>
+</tr>
+<tr>
+<td>Ram</td>
+<td>$mem</td>
+</tr>
+<tr>
+<td>Swap</td>
+<td>$swap</td>
+</tr>
+
+
+
+</html>
 ${lua listen}
-Hello world! $uptime
