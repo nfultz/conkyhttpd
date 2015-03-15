@@ -1,4 +1,8 @@
-# 
+# Conky HTTPd
+
+This module redirects conky output to an http connection. You might want 
+to do this to create a custom lightweight monitoring service, or maybe
+you want to render conky inside Firefox.
 
 
 ##Instructions
@@ -9,9 +13,9 @@ Compile the C library
 
 Then run conky:
 
-    conky -c webconky &
+    conky -c conkyhttpd.conkyrc &
 
-And checkout the sample page:
+And view the sample page:
 
     firefox startpage.html
 
